@@ -4,7 +4,7 @@ unsigned char ft_toupper(unsigned char c);
 unsigned char ft_tolower(unsigned char c);
 const char    *ft_strrchr(const char *s, const char c);
 int ft_strncmp(const char *s1, const char *s2, unsigned int n);
-unsigned int  ft_strlen(const char *s);
+size_t  ft_strlen(const char *s);
 size_t ft_strlcat(char *dst, const char *src, size_t size);
 const char    *ft_strchr(const char *s, const char c);
 void    *ft_memset(void *s, int c, size_t n);
