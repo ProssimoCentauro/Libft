@@ -1,17 +1,22 @@
 #include "libft.h"
 
-void    *ft_memcpy(void *restrict dest, const void *restrict src, size_t n)
+void    ft_memcpy(void *dest, const void *src, size_t n)
 {
-    char    *restrict dest_cast;
-    const char    *restrict src_cast;
+    unsigned char    *dest_cast;
+    const unsigned char    *src_cast;
     size_t i;
-    dest_cast = (char *restrict) dest;
-    src_cast = (char *restrict) src;
+
+    dest_cast = (unsigned char *) dest;
+    src_cast = (unsigned char *) src;
     i = 0;
-    while(i++ < n)
+    while(i < n)
+    {
         dest_cast[i] = src_cast[i];
+        i++;
+    }
     return (dest);
 }
+/*
 #include <stdio.h>
 int main() {
     // Buffer di origine
@@ -20,11 +25,11 @@ int main() {
     char dest[50];
 
     // Utilizzo della nostra funzione memcpy
-    ft_memcpy(dest, src, ft_strlen(src) + 1); // +1 per includere il terminatore null
+    ft4_memcpy(dest, src, 4); // +1 per includere il terminatore null
 
     // Stampa del risultato
     printf("Src:  %s\n", src);
     printf("Dest: %s\n", dest);
 
     return 0;
-}
+}*/
