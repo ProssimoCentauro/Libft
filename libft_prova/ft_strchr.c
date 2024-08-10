@@ -1,13 +1,21 @@
-const char    *ft_strchr(const char *s, const char c)
+#include <stdio.h>
+#include "libft.h"
+char    *ft_strchr(const char *s, int c)
 {
-    int i;
+    size_t i;
 
     i = 0;
     while (s[i])
     {
-        if (s[i] == c)
-            return (&s[i]);
+        if ((char)s[i] == (char)c)
+            return ((char *)&s[i]);
         i++;
     }
-    return (&s[i]);
+    return (NULL);
+}
+
+int main()
+{
+    printf(NULL);
+    printf("%s\n", ft_strchr("ciaocipo", 'k'));
 }
