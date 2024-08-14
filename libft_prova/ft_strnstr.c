@@ -1,33 +1,39 @@
 #include "libft.h"
+
+char    *ft_strnstr(const char *big, const char *little, size_t len)
+{
+    size_t  i;
+    size_t  j;
+    size_t  ini_i;
+
+    i = 0;
+    j = 0;
+    ini_i = i;
+    if (little[0] == '\0')
+        return ((char *)big);
+    while (i < len)
+    {
+        ini_i = i;
+        if (big[i] == little[j])
+        {
+            while (big[ini_i] == little[j] && little[j] != '\0')
+            {
+                ini_i++;
+                j++;
+            }
+            if (little[j] == '\0')
+                return ((char *)&big[i]);
+        }
+        j = 0;
+        i++;
+    }
+    return (NULL);
+}
 #include <stdio.h>
 #include <string.h>
-#include <bsd/string.h>
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+int main()
 {
-	int	i;
-	int	j;
-    int k;
-
-	i = 0;
-	if (little[0] == '\0')
-		return ((char *)big);
-	while (i < len)
-	{
-        k = i;
-		j = 0;
-		while (big[k] == little[j] && big[k] != '\0')
-		{
-			if (little[j + 1] == '\0')
-				return ((char *)&big[i]);
-			j++;
-            k++;
-		}
-		i++;
-	}
-	return (NULL);
-}
-int main(int ac, char**av)
-{
-    //printf("funzione vera: %c\n", strnstr(av[1], av[2], 4));
-    printf("funzione mia :%c\n", *ft_strnstr(av[1], av[2], 4));
+    printf("%p\n", ft_strnstr("ciaocome", "ocome", 3));
+    //printf("%s\n", strnstr("ciaocome", "ocome", 7));
+    return 0;
 }
