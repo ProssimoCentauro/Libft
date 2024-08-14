@@ -16,7 +16,7 @@ size_t  ft_strlen(const char *s)
 size_t ft_strlcat(char *dst, const char *src, size_t size);
 char    *ft_strchr(const char *s, int c);
 void    *ft_memset(void *s, int c, size_t n);
-void    *ft_memchr(const void *s, int c, unsigned int n);
+void    *ft_memchr(const void *s, int c, size_t n);
 int ft_isprint(unsigned char c);
 int ft_isdigit(unsigned char c);
 int ft_isascii(unsigned char c);
