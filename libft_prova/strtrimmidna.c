@@ -1,4 +1,4 @@
-//#include "libft.h"
+#include "libft.h"
 
 char	*ft_strchr(const char *str, int c)
 {
@@ -13,7 +13,7 @@ char	*ft_strchr(const char *str, int c)
 	return (0);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*strtrimmidna(char const *s1, char const *set)
 {
 	char	*copy;
 	size_t	s1len;
@@ -44,6 +44,6 @@ char	*ft_strtrim(char const *s1, char const *set)
 int main(int ac, char**av)
 {
     (void)ac;
-    printf("%s\n", ft_strtrim(av[1], av[2]));
+    printf("%s\n", strtrimmidna(av[1], av[2]));
     return 0;
 }
