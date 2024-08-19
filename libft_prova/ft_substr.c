@@ -37,9 +37,3 @@ char    *ft_substr(char const *s, unsigned int start, size_t len)
     res[i] = '\0';
     return (res);
 }
-#include <stdio.h>
-int main(int ac, char **av)
-{
-    (void)ac;
-    printf("%s\n", ft_substr(av[1], 3, 4));
-}

@@ -16,7 +16,7 @@ char    *ft_strnstr(const char *big, const char *little, size_t len)
         ini_i = i;
         if (big[i] == little[j])
         {
-            while (big[ini_i] == little[j] && little[j] != '\0')
+            while (big[ini_i] == little[j] && little[j] && ini_i < len)
             {
                 ini_i++;
                 j++;
@@ -28,12 +28,4 @@ char    *ft_strnstr(const char *big, const char *little, size_t len)
         i++;
     }
     return (NULL);
-}
-#include <stdio.h>
-#include <string.h>
-int main()
-{
-    printf("%p\n", ft_strnstr("ciaocome", "ocome", 3));
-    //printf("%s\n", strnstr("ciaocome", "ocome", 7));
-    return 0;
 }
