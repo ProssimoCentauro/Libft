@@ -62,8 +62,9 @@ char    *ft_strtrim(char const *s1, char const *set)
     i = index_calc(s1, set);
     j = index_calc_rev(s1, set);
     k = 0;
-
     dest = (char *)malloc((j - i) + 2);
+    if  (!dest)
+        return (NULL);
     while (i <= j)
     {
         dest[k] = s1[i];
@@ -76,6 +77,6 @@ char    *ft_strtrim(char const *s1, char const *set)
 int main(int ac, char** av)
 {
     (void)ac;
-    printf("%s\n", ft_strtrim(av[1], av[2]));
+    printf("%p\n", ft_strtrim(av[1], av[2]));
     return 0;
 }
