@@ -21,7 +21,6 @@ char    *ft_substr(char const *s, unsigned int start, size_t len)
 
     i = 0;
     count = count_from_start(s, start);
-
     if (len <= count)
         res = (char *)malloc(len + 1);
     else
