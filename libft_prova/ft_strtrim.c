@@ -57,8 +57,8 @@ char    *ft_strtrim(char const *s1, char const *set)
     size_t  k;
     char    *dest;
     
-    printf("%ld\n", index_calc(s1, set));
-    printf("%ld\n", index_calc_rev(s1, set));
+//    printf("%ld\n", index_calc(s1, set));
+//    printf("%ld\n", index_calc_rev(s1, set));
     i = index_calc(s1, set);
     j = index_calc_rev(s1, set);
     k = 0;
@@ -77,6 +77,6 @@ char    *ft_strtrim(char const *s1, char const *set)
 int main(int ac, char** av)
 {
     (void)ac;
-    printf("%p\n", ft_strtrim(av[1], av[2]));
+    printf("%s\n", ft_strtrim(av[1], av[2]));
     return 0;
 }
