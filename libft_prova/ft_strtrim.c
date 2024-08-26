@@ -1,82 +1,102 @@
 #include "libft.h"
 
-#include <stdio.h>
-
-static size_t  index_calc(char const *s1, char const *set)
+static size_t	index_calc(char const *s1, char const *set)
 {
-    size_t  k;
-    size_t  i;
+	size_t	k;
+	size_t	i;
 
-    k = 0;
-    i = 0;
-    while (1)
-    {
-        k = 0;
-        while (set[k])
-        {
-            if (s1[i] == set[k])
-            {
-                i++;
-                break;
-            }
-            k++;
-        }
-        if (k == ft_strlen(set))
-            break;
-    }
-    return (i);
-}
-static size_t  index_calc_rev(char const *s1, char const *set)
-{
-    size_t  k;
-    size_t  j;
-
-    k = 0;
-    j = ft_strlen(s1) - 1;
-    while (1)
-    {
-        k = 0;
-        while (set[k])
-        {
-            if (s1[j] == set[k])
-            {
-                j--;
-                break;
-            }
-            k++;
-        }
-        if (k == ft_strlen(set))
-            break;
-    }
-    return (j);
-}
-char    *ft_strtrim(char const *s1, char const *set)
-{
-    size_t  i;
-    size_t  j;
-    size_t  k;
-    char    *dest;
-    
-//    printf("%ld\n", index_calc(s1, set));
-//    printf("%ld\n", index_calc_rev(s1, set));
-    i = index_calc(s1, set);
-    j = index_calc_rev(s1, set);
-    k = 0;
-    dest = (char *)malloc((j - i) + 2);
-    if  (!dest)
-        return (NULL);
-    while (i <= j)
-    {
-        dest[k] = s1[i];
-        k++;
-        i++;
-    }
-    return (dest);
+	k = 0;
+	i = 0;
+	while (1)
+	{
+		k = 0;
+		while (set[k])
+		{
+			if (s1[i] == set[k])
+			{
+				i++;
+				break ;
+			}
+			k++;
+		}
+		if (k == ft_strlen(set))
+			break ;
+	}
+	return (i);
 }
 
-int main(int ac, char** av)
+static size_t	index_calc_rev(char const *s1, char const *set, size_t i)
 {
-    (void)ac;
-    printf("%s\n", ft_strtrim(av[1], av[2]));
-    return 0;
+	size_t	k;
+	size_t	j;
+
+	k = 0;
+	j = ft_strlen(s1) - 1;
+	while (1)
+	{
+		k = 0;
+		while (set[k])
+		{
+			if (s1[j] == set[k])
+			{
+				if (j == i)
+					return (j);
+				j--;
+				break ;
+			}
+			k++;
+		}
+		if (k == ft_strlen(set))
+			break ;
+	}
+	return (j);
+}
+
+char	*malloc_string(char *str, size_t j, size_t i)
+{
+	if (j - i == 0)
+	{
+		str = (char *)malloc(1 * sizeof(char));
+		str[0] = '\0';
+		return (str);
+	}
+	else
+	{
+		str = (char *)malloc(((j - i) + 1) + sizeof(char));
+		str[0] = 'a';
+	}
+	return (str);
+}
+
+int	check_string(char *str)
+{
+	if (str[0] == '\0')
+		return (0);
+	return (1);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	size_t	i;
+	size_t	j;
+	size_t	k;
+	char	*dest;
+
+	if (!s1 || !set)
+		return (NULL);
+	i = index_calc(s1, set);
+	j = index_calc_rev(s1, set, i);
+	k = 0;
+	dest = malloc_string(dest, j, i);
+	if (!dest)
+		return (NULL);
+	if (!check_string(dest))
+		return (dest);
+	while (i <= j)
+	{
+		dest[k] = s1[i];
+		k++;
+		i++;
+	}
+	return (dest);
 }
