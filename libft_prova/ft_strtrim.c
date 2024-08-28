@@ -52,7 +52,7 @@ static size_t	index_calc_rev(char const *s1, char const *set, size_t i)
 	return (j);
 }
 
-char	*malloc_string(char *str, size_t j, size_t i)
+static char	*malloc_string(char *str, size_t j, size_t i)
 {
 	if (j - i == 0)
 	{
@@ -68,7 +68,7 @@ char	*malloc_string(char *str, size_t j, size_t i)
 	return (str);
 }
 
-int	check_string(char *str)
+static int	check_string(char *str)
 {
 	if (str[0] == '\0')
 		return (0);

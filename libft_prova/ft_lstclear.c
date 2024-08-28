@@ -1,9 +1,8 @@
-#include "Libft.h""
+#include "Libft.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list = temp_elem;
-
 	if (!lst)
 		return ;
 	while (*lst)

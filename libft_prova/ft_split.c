@@ -1,5 +1,4 @@
 #include "libft.h"
-#include <stdio.h>
 
 static size_t	count_words(char const *str, char c)
 {
