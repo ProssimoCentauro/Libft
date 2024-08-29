@@ -56,13 +56,12 @@ static char	*malloc_string(char *str, size_t j, size_t i)
 {
 	if (j - i == 0)
 	{
-		str = (char *)malloc(1 * sizeof(char));
 		str[0] = '\0';
 		return (str);
 	}
 	else
 	{
-		str = (char *)malloc(((j - i) + 1) + sizeof(char));
+		str = (char *)malloc((j - i) + sizeof(char));
 		str[0] = 'a';
 	}
 	return (str);
@@ -87,6 +86,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = index_calc(s1, set);
 	j = index_calc_rev(s1, set, i);
 	k = 0;
+	dest = (char *)malloc(1 * sizeof(char));
 	dest = malloc_string(dest, j, i);
 	if (!dest)
 		return (NULL);
