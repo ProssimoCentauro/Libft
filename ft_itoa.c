@@ -47,11 +47,14 @@ static char	*write_num(int n, int j, int i, char *str)
 	int	n2;
 
 	n2 = 0;
-	while (n > 0)
+	while (j > 0)
 	{
 		n2 = n / j;
-		str[i] = (n2 % 10) + '0';
-		n = n - (j * (n2 % 10));
+		str[i] = n2 + '0';
+		/*if (n2 == 0)
+			n -= j;
+		else*/
+		n -= (j * n2);
 		j = j / 10;
 		i++;
 	}

@@ -7,9 +7,19 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	dest_cast = (unsigned char *)dest;
 	src_cast = (unsigned char *)src;
+	if (!dest_cast && !src_cast)
+		return (NULL);
 	if (dest > src)
-		*dest_cast++ = *src_cast++;
+	{
+		dest_cast += n - 1;
+		src_cast += n -1;
+		while (n--)
+			*dest_cast-- = *src_cast--;
+	}
 	else
-		dest_cast[n] = src_cast[n];
+	{
+		while (n--)
+			*dest_cast++ = *src_cast++;
+	}
 	return (dest);
 }

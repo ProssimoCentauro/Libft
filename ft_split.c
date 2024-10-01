@@ -65,6 +65,8 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	i = 0;
 	j = 0;
+	while(s[i] == c && s[i])
+		i++;
 	while (s[i])
 	{
 		matrix[j] = (char *)malloc(word_len(s, i, c) + 1);
