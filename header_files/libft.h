@@ -6,7 +6,7 @@
 /*   By: rtodaro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 16:53:21 by rtodaro           #+#    #+#             */
-/*   Updated: 2024/12/11 16:53:27 by rtodaro          ###   ########.fr       */
+/*   Updated: 2025/07/18 16:09:05 by rtodaro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,6 @@ void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
+
+void				applausi_per_fibra(void);
 #endif

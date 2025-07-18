@@ -16,7 +16,7 @@ LIBFT_SRCS = $(LIBFT_DIR)ft_isalpha.c $(LIBFT_DIR)ft_isdigit.c $(LIBFT_DIR)ft_is
     $(LIBFT_DIR)ft_putchar_fd.c $(LIBFT_DIR)ft_putstr_fd.c $(LIBFT_DIR)ft_putendl_fd.c $(LIBFT_DIR)ft_putnbr_fd.c \
     $(LIBFT_DIR)ft_lstnew.c $(LIBFT_DIR)ft_lstadd_front.c $(LIBFT_DIR)ft_lstadd_back.c $(LIBFT_DIR)ft_lstdelone.c \
     $(LIBFT_DIR)ft_lstclear.c $(LIBFT_DIR)ft_lstiter.c $(LIBFT_DIR)ft_lstmap.c $(LIBFT_DIR)ft_lstsize.c \
-    $(LIBFT_DIR)ft_lstlast.c
+    $(LIBFT_DIR)ft_lstlast.c $(LIBFT_DIR)applausi_per_fibra.c
 
 PRINTF_SRCS := $(PRINTF_DIR)ft_printf.c  $(PRINTF_DIR)libc_utils.c  $(PRINTF_DIR)print_functions.c
 
